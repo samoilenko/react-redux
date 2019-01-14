@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
 // import App from './components/App';
 // import HomePage from './components/home/HomePage';
 // import CatsPage from './components/cats/CatsPage';
