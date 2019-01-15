@@ -3,20 +3,13 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 // import App from './components/App';
 // import HomePage from './components/home/HomePage';
-// import CatsPage from './components/cats/CatsPage';
-// import CatPage from './components/cats/CatPage';
+import CatsPage from './components/cats/CatsPage';
+import CatPage from './components/cats/CatPage';
 
 function HomePage() {
     return (
         <div>
             <h2>HomePage</h2>
-        </div>
-    );
-}
-function CatsPage() {
-    return (
-        <div>
-            <h2>CatsPage</h2>
         </div>
     );
 }
@@ -37,7 +30,9 @@ export default () => (
             <hr />
 
             <Route path="/" exact component={HomePage}/>
-            <Route path="/cats" component={CatsPage} />
+            <Route path="/cats" component={CatsPage}>
+                <Route path="cats/:id" component={CatPage}/>
+            </Route>
         </div>
     </Switch>
 </Router>

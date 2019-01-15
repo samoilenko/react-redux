@@ -1,4 +1,4 @@
-import React, { Component, ReactPropTypes } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import AppRouter from './routes';
 import Header from './Header';

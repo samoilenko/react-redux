@@ -1,4 +1,5 @@
 import catApi from '../api/catApi';
+import { LOAD_CATS_SUCCESS } from './actionTypes'
 
 export function loadCats() {
     return function (dispatch) {
@@ -8,4 +9,8 @@ export function loadCats() {
             throw(error);
         });
     };
+}
+
+export function loadCatsSuccess(cats) {
+    return {type: LOAD_CATS_SUCCESS, cats};
 }
