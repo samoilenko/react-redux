@@ -4,8 +4,10 @@ import AppRouter from './routes';
 import Header from './Header';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
+import {loadCats} from './actions/catActions';
 
 const store = configureStore();
+store.dispatch(loadCats());
 
 class App extends Component {
   render() {
