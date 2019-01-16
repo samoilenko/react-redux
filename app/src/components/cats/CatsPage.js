@@ -12,6 +12,9 @@ class CatsPage extends React.Component {
                 <div className="col-md-4">
                     <CatList cats={this.props.cats}/>
                 </div>
+                <div className="col-md-8">
+                    {this.props.children}
+                </div>
             </div>
         );
     }

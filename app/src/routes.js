@@ -16,24 +16,24 @@ function HomePage() {
 
 export default () => (
 <Router>
-    <Switch>
-        <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/cats">Cats</Link>
-                </li>
-            </ul>
+    <div>
+        <ul>
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/cats">Cats</Link>
+            </li>
+        </ul>
 
-            <hr />
+        <hr />
 
+
+        <Switch>
             <Route path="/" exact component={HomePage}/>
-            <Route path="/cats" component={CatsPage}>
-                <Route path="cats/:id" component={CatPage}/>
-            </Route>
-        </div>
-    </Switch>
+            <Route path="/cats" component={CatsPage}/>
+            <Route path="cats/:id" component={CatPage}/>
+        </Switch>
+    </div>
 </Router>
 );
