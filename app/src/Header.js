@@ -24,8 +24,8 @@ const Header = () => {
                 {" | "}
                 <NavLink to="/cats" activeClassName="active">Cats</NavLink>
 
-                {/*<Route path="/" exact component={HomePage}/>*/}
-                {/*<Route path="/cats" component={CatsPage} />*/}
+                <Route path="/" exact component={HomePage}/>
+                <Route path="/cats" component={CatsPage} />
             </nav>
         </Router>
     );

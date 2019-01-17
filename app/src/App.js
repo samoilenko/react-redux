@@ -5,9 +5,11 @@ import Header from './Header';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import {loadCats} from './actions/catActions';
+import {loadHobbies} from './actions/hobbyAction';
 
 const store = configureStore();
 store.dispatch(loadCats());
+store.dispatch(loadHobbies());
 
 class App extends Component {
   render() {
@@ -16,6 +18,7 @@ class App extends Component {
         {this.props.children}
         <Header/>
         <hr/>
+          KKKKKKK
           <Provider store={store}>
             <AppRouter/>
           </Provider>

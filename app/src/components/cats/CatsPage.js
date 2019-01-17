@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import * as catActions from '../../actions/catActions';
+// import * as catActions from '../../actions/catActions';
 import CatList from './CatList';
 
 class CatsPage extends React.Component {
