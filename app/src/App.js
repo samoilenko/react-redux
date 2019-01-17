@@ -18,7 +18,6 @@ class App extends Component {
         {this.props.children}
         <Header/>
         <hr/>
-          KKKKKKK
           <Provider store={store}>
             <AppRouter/>
           </Provider>

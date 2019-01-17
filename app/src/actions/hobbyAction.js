@@ -12,7 +12,7 @@ export function loadHobbies() {
     return function (dispatch) {
         return hobbyApi.getAllHobbies()
             .then(hobbies => {
-                dispatch(loadHobbies(hobbies))
+                dispatch(loadHobbiesSuccess(hobbies))
             })
             .catch(error => {
                 throw(error);
