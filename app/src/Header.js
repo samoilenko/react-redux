@@ -1,17 +1,11 @@
 import React from 'react';
 import { NavLink, BrowserRouter as Router, Route } from 'react-router-dom';
+import CatsPage from './components/cats/CatsPage'
 
 function HomePage() {
     return (
         <div>
             <h2>HomePage</h2>
-        </div>
-    );
-}
-function CatsPage() {
-    return (
-        <div>
-            <h2>CatsPage</h2>
         </div>
     );
 }

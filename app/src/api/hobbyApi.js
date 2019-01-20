@@ -4,15 +4,15 @@ class HobbyApi {
             res([
                 {
                     id: 1,
-                    'title': 'title1',
+                    'name': 'title1',
                 },
                 {
                     id: 2,
-                    'title': 'title2',
+                    'name': 'title2',
                 },
                 {
                     id: 3,
-                    'title': 'title3',
+                    'name': 'title3',
                 },
             ]);
         });
