@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInput from '../common/TextInput';
+import TextInput from '../formElements/TextInput';
 
 class CatForm extends React.Component {
     render() {
@@ -48,4 +48,10 @@ class CatForm extends React.Component {
 
 CatForm.propTypes = {
     cat: PropTypes.object.isRequired,
+    hobbies: React.PropTypes.array.isRequired,
+    onSave: React.PropTypes.func.isRequired,
+    onChange: React.PropTypes.func.isRequired,
 };
+
+
+export default CatForm;
