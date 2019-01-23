@@ -70,6 +70,7 @@ CatForm.propTypes = {
     hobbies: PropTypes.array.isRequired,
     onSave: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
+    onHobbyChange: PropTypes.func.isRequired,
 };
 
 
