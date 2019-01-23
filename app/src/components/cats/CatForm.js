@@ -1,8 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../formElements/TextInput';
+import CheckBox from '../formElements/CheckBox';
 
 class CatForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.makeCheckBoxed = this.makeCheckBoxes.bind(this);
+    }
+
+    makeCheckBoxes() {
+        return this.props.hobbies.map(hobby => {
+            return (
+                <CheckBox
+                    item={hobby}
+                    handleChange={this.props.onHobbyChange}
+                    key={hobby.id}/>
+            );
+        });
+    }
+
     render() {
         const boxes = this.makeCheckBoxes();
         return (
@@ -14,6 +31,8 @@ class CatForm extends React.Component {
                         value={this.props.cat.name}
                         onChange={this.props.onChange}
                     />
+
+                    {boxes}
 
                     <TextInput
                         name="breed"
@@ -48,9 +67,9 @@ class CatForm extends React.Component {
 
 CatForm.propTypes = {
     cat: PropTypes.object.isRequired,
-    hobbies: React.PropTypes.array.isRequired,
-    onSave: React.PropTypes.func.isRequired,
-    onChange: React.PropTypes.func.isRequired,
+    hobbies: PropTypes.array.isRequired,
+    onSave: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
 };
 
 
