@@ -23,6 +23,34 @@ class CatPage extends React.Component {
 
     saveCat(event) {
         event.preventDefault();
+        this.props.actions.updateCat(this.state.cat);
+    }
+
+    updateCatHobbies(event) {
+        const cat = this.state.cat;
+        const hobbyId = event.target.value;
+        const hobby = this.state.checkBoxHobbies.filter(hobby => hobby.id === hobbyId)[0];
+        const checked = !hobby.checked;
+        hobby['checked'] = checked;
+
+        if (checked) {
+            cat.hobby_ids.push(hobby.id)
+        } else {
+            cat.hobby_ids.splice(cat.hobby_ids.indexOf(hobby.id));
+        }
+
+        this.setState({cat: cat});
+    }
+
+    updateCatState(event) {
+        const field = event.target.name;
+        const cat = this.state.cat;
+        cat[field] = event.target.value;
+        return this.setState({cat: cat});
+    }
+
+    saveCat(event) {
+        event.preventDefault();
 
         this.props.actions.updateCat(this.state.cat);
     }
