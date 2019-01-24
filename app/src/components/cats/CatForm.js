@@ -6,6 +6,7 @@ import CheckBox from '../formElements/CheckBox';
 class CatForm extends React.Component {
     constructor(props) {
         super(props);
+
         this.makeCheckBoxed = this.makeCheckBoxes.bind(this);
     }
 
