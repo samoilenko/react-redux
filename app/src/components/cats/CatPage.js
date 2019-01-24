@@ -43,7 +43,6 @@ class CatPage extends React.Component {
     }
 
     updateCatState(event) {
-        console.log(event.target);
         const field = event.target.name;
         const cat = this.state.cat;
         cat[field] = event.target.value;
@@ -75,7 +74,7 @@ class CatPage extends React.Component {
         if (this.state.isEditing) {
             return (
                 <div>
-                    <h1>edit ac cat</h1>
+                    <h1>edit a cat</h1>
                     <CatForm
                         cat={this.state.cat}
                         hobbies={this.state.checkBoxHobbies}
@@ -94,7 +93,7 @@ class CatPage extends React.Component {
                 <p>weight: {this.state.cat.weight}</p>
                 <p>temperament: {this.state.cat.temperament}</p>
                 <HobbyList hobbies={this.state.catHobbies} />
-                <button onClick={this.toggleEdit} className="btn btn-default">edit</button>
+                <button onClick={this.toggleEdit} className="btn btn-primary">edit</button>
             </div>
         );
     }

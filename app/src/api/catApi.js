@@ -6,6 +6,7 @@ class CatApi {
                     id: 1,
                     name: "Moe",
                     weight: "heavy",
+                    breed: 'breed1',
                     temperament: "protective",
                     hobby_ids: [1, 2]
                 },
@@ -14,7 +15,8 @@ class CatApi {
                     name: "Mini",
                     weight: "heavy",
                     temperament: "sweet",
-                    hobby_ids: [1]
+                    hobby_ids: [1],
+                    breed: null,
                 },
 
             ]);
