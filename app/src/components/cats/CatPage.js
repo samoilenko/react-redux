@@ -28,7 +28,7 @@ class CatPage extends React.Component {
 
     updateCatHobbies(event) {
         const cat = this.state.cat;
-        const hobbyId = event.target.value;
+        const hobbyId = parseInt(event.target.value);
         const hobby = this.state.checkBoxHobbies.filter(hobby => hobby.id === hobbyId)[0];
         const checked = !hobby.checked;
         hobby['checked'] = checked;
@@ -117,7 +117,7 @@ function collectHobbies(hobbies, cat) {
 }
 
 function mapStateToProps(state, ownProps) {
-    const stateHobbies = Object.assign([], state.hobbies);
+    const stateHobbies = [...state.hobbies];
     let checkBoxHobbies = [];
     let cat = {name: '', bread: '', weight: '', temperament: '', hobby_ids: []};
     let catHobbies = [];
@@ -126,9 +126,11 @@ function mapStateToProps(state, ownProps) {
     if (catId && state.cats.length > 0 && state.hobbies.length > 0) {
         cat = Object.assign({}, state.cats.find(cat => cat.id === catId));
 
-        if (cat && cat.hobby_ids.length > 0) {
+        if (cat && cat.id && cat.hobby_ids.length > 0) {
             checkBoxHobbies = hobbiesForCheckBoxes(stateHobbies, cat);
             catHobbies = collectHobbies(state.hobbies, cat);
+        } else {
+            checkBoxHobbies = hobbiesForCheckBoxes(stateHobbies);
         }
     }
 
